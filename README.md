@@ -4,6 +4,7 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com/?lines=This+Script+credit+goes+to;someone+else)](https://git.io/typing-svg)
 
 <h1>Social Links</h1>
+
 Follow us here: [Cipher_Airdrop](https://linktr.ee/cadrop)
 
 Twitter(X): [Cipher_Airdrop](https://x.com/cipher_airdrop)
@@ -28,7 +29,7 @@ An ideal V2 script for farm management. Having mastered it, you can (there is a 
 12. tx_checker: looks nonce in all (almost) evm networks.
 13. 1inch_swap: aggregator.
 14. merkly_refuel: sending gas from one network to another via layerzero.
-15. nft_checker: very quickly (asynka) watches the balance of a specific nft.
+15. nft_checker: very quickly watches the balance of a specific nft.
 
 Additional information :
 
@@ -43,15 +44,17 @@ Additional information :
 
 
 <h1>Setting</h1>
+
 1. All settings are made in the file `setting.py`, the description is the same.<br>
 2. If you want to run multiple modules in one chain, you need to configure them in `tracks.py`.<br>
 3. In folder `data` rename files `wallets_EXAMPLE.txt` = > `wallets.txt`, `proxies_EXAMPLE.txt` = > `proxies.txt`, `data_EXAMPLE.py` = > `data.py`<br>
-4. In folder data there are 5 files :
-<ul><li>`wallets.txt`- here we write wallets (coupers / addresses).</li>
-<li>`recipients.txt`- here we write the addresses for the transfer, used only in the transfer module when we display from the wallet to the address. 1 wallet = 1 address.</li>
-<li>`proxies.txt` - we write proxies here, they are used in a debank checker, without them it will not work, and in web3, if `USE_PROXY = True` (in the config). Format : http://login:password@ip:port</li>
-<li>`starknet_address.txt`- here we write down the addresses of starknet wallets. if you don’t shave from the orbit to the stark, you can not insert.</li>
-<li>`data.py`- here is all private information: rpc, tg_token, tg_id, api keys to exchanges.</li></ul>
+4. In folder `data` there are 5 files :
+- `wallets.txt`- here we write wallets (coupers / addresses).
+- `recipients.txt`- here we write the addresses for the transfer, used only in the transfer module when we display from the wallet to the address. 1 wallet = 1 address.
+- `proxies.txt` - we write proxies here, they are used in a debank checker, without them it will not work, and in web3, if `USE_PROXY = True` (in the config). Format : https://login:password@ip:port
+- `starknet_address.txt`- here we write down the addresses of starknet wallets. if you don’t shave from the orbit to the stark, you can not insert.
+- `data.py`- here is all private information: rpc, tg_token, tg_id, api keys to exchanges.
+
 5. You need to configure modules in value classes in a file `setting.py`.
 6. You need to start the file `main.py`, if `USE_TRACKS = False`, then in the terminal there will be a list with modules, you will need to select one.
 
