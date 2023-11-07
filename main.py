@@ -7,7 +7,7 @@ import asyncio
 if __name__ == "__main__":
 
     cprint(TITLE, TITLE_COLOR)
-    cprint(f'\nsubscribe to us : https://t.me/hodlmodeth', TITLE_COLOR)
+    cprint(f'\nsubscribe us : https://twitter.com/cipher_airdrop', TITLE_COLOR)
 
     if USE_TRACKS:
         cprint('\nrun track :', 'white')
