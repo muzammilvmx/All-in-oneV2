@@ -1,22 +1,22 @@
 from tracks import *
 
-# --- Настройки ---
-WALLETS_IN_BATCH = 1    # Сколько кошельков запускаем в одном потоке (одновременно)
+# --- Settings ---
+WALLETS_IN_BATCH = 1 # How many wallets we run in one thread (simultaneously)
 
-USE_TRACKS = False      # Включить/выключить треки
-TRACK = track_1         # Меняется на переменную трека из routes.py
+USE_TRACKS = False # Enable/disable tracks
+TRACK = track_1 # Changes to the track variable from routes.py
 
-IS_SLEEP = True         # Включить/выключить задержку между кошельками
-DELAY_SLEEP = [10, 30]  # Диапазон задержки между кошельками (секунды)
-RANDOMIZER = False      # Включить/выключить случайное перемешивание кошельков
-RETRY = 0               # Количество попыток при ошибках/фейлах
-TG_BOT_SEND = True      # Включить/выключить отправку результатов в Telegram-бота
+IS_SLEEP = True # Enable/disable delay between wallets
+DELAY_SLEEP = [10, 30] # Delay range between wallets (seconds)
+RANDOMIZER = False # Enable/disable random mixing of wallets
+RETRY = 0 # Number of attempts in case of errors/failures
+TG_BOT_SEND = True # Enable/disable sending results to a Telegram bot
 
-USE_PROXY = False       # Включить/выключить использование прокси в запросах к web3
-CHECK_GWEI = True       # Включить/выключить проверку base Gwei
-MAX_GWEI = 25           # Максимальный Gwei (см. https://etherscan.io/gastracker)
+USE_PROXY = False # Enable/disable the use of proxies in web3 requests
+CHECK_GWEI = True # Enable/disable base Gwei check
+MAX_GWEI = 25 # Maximum Gwei (see https://etherscan.io/gastracker)
 
-# Максимальная комиссия для транзакции в USD, при которой скрипт будет спать 30 секунд и пытаться снова
+# Maximum commission for a transaction in USD, at which the script will sleep for 30 seconds and try again
 MAX_GAS_CHARGE = {
     'avalanche'     : 1,
     'polygon'       : 0.5,
@@ -37,7 +37,7 @@ MAX_GAS_CHARGE = {
 class Value_Web3_Checker:
 
     '''
-    чекер монет через web3
+    coin checker via web3
     chains : ethereum | optimism | bsc | polygon | arbitrum | avalanche | fantom | nova | zksync | polygon_zkevm | celo | gnosis | core | harmony | linea | base
     '''
 
@@ -111,27 +111,27 @@ class Value_Web3_Checker:
     min_token_balance = {
         'chain'     : 'bsc',
         'coin'      : 'BNB',
-        'amount'    : 0 # если баланс меньше этого числа, кошелек будет выделен
+        'amount'    : 0 # if the balance is less than this number, the wallet will be allocated
     }
 
-    min_value_balance = 5 # если баланс кошелька в $ меньше этого числа, кошелек будет выделен
+    min_value_balance = 5 # if the wallet's $ balance is less than this number, the wallet will be allocated
     
 class Value_DeBank():
 
     '''
-    чекер баланса через debank, смотрит все сети, протоколы и нфт.
+    balance checker through debank, looks at all networks, protocols and NFTs.
 
-    если кошельки ни разу не прогонял этим чекером, тогда сначала нужно их активировать : activate_wallets = True.
-    сети, которые мы активируем, записаны в config.py => DEBANK_ACTIVATE_CHAINS. ненужные (как по мне) сети я закомментировал. если нужно, можешь их раскомментировать
+    if you have never run wallets with this checker, then you need to activate them first : activate_wallets = True.
+    the networks we activate are recorded в config.py => DEBANK_ACTIVATE_CHAINS. I commented out unnecessary (as for me) networks. if necessary, you can uncomment them
     '''
 
-    activate_wallets = True # True если нужно активировать кошельки (при первом запуске). False чтобы отключить
+    activate_wallets = True # True if you need to activate wallets (at first launch). False to disable
 
-    # какие модули включены. если какой-то модуль не нужен, закомментируй (#) его. модуль nft самый долгий, по ненадобности лучше его отключать
+    # which modules are enabled. If some module is not needed, comment it out (#). The nft module takes the longest time; if it is not needed, it is better to disable it
     modules = [
-        'token', # смотрит монеты
-        # 'nft', # смотрит нфт
-        'protocol' # смотрит протоколы
+        'token', # looks at coins
+        # 'nft', # watchesnft
+        'protocol' # looks at the protocols
     ]
 
     # в каких сетях смотрим нфт. если какая-то сеть не нужна, закомментируй (#) ее
@@ -196,7 +196,7 @@ class Value_OKX():
     amount_from = 1
     amount_to   = 2
 
-    account = 'yanashulman'
+    account = 'acount_1'
 
     fee         = 0.1 # комса на вывод
     sub_acc     = False # True / False. True если хочешь проверять субаккаунты и сначала делать с них перевод на основной счет
