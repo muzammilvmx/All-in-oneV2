@@ -59,6 +59,7 @@ Additional information :
 6. You need to start the file `main.py`, if `USE_TRACKS = False`, then in the terminal there will be a list with modules, you will need to select one.
 
 <h1>Information on tracks(several modules)</h1>
+
 1. To make the mode work, you need to `setting.py` do `USE_TRACKS = True`.<br>
 2. `tracks.py` tracks with modules are tuned, you can make several tracks and select them in `setting.py` in variable `TRACK`.<br>
 3. Function `wait_balance` only works in track mode: you select the network in which you will wait for the coin, and the minimum balance. When the coin balance becomes larger `min_balance`, the script will go to the next module. Check balance every 10 seconds.<br>
